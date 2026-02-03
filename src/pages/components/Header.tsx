@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import MenuOverlay from "./NavPopup";
+import { useState } from "react";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <motion.header
             initial={{ opacity: 0, y: -30 }}
@@ -14,7 +17,8 @@ export default function Header() {
                 <img src="./logo.png" alt="logo" className="w-16" />
                 <span className="ml-2">HUMGENCE</span>
             </div>
-            <div className="text-2xl cursor-pointer text-white">☰</div>
+            <div className="text-2xl cursor-pointer text-white" onClick={() => setIsMenuOpen(true)}>☰</div>
+            <MenuOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         </motion.header>
     )
 }
