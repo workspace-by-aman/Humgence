@@ -15,13 +15,15 @@ export default function DoBigThings() {
                 animate={{ x: ["-50%", "50%"] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
                 style={{
-                    WebkitTextStroke: "2px #56c0db",
+                    fontFamily: "sans-serif",
+                    fontWeight: 800,
                     color: "transparent",
+                    WebkitTextStroke: "3px #56c0db",
                 }}
             >
                 DO BIG THINGS
             </motion.h2>
-        </section>
+        </section >
 
     );
 }
